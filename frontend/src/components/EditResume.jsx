@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import DashboardLayout from './DashboardLayout'
 import { containerStyles } from '../assets/dummystyle'
 import { TitleInput } from './Inputs'
@@ -188,7 +188,13 @@ const EditResume = () => {
     <DashboardLayout>
         <div className={containerStyles.main}>
             <div className={containerStyles.header}>
-                <TitleInput title={resume}/>
+                <TitleInput title={resumeData.title}
+                    setTitle={(value) => setResumeData((prev) => ({
+                        ...prev,
+                        title: value,
+                    }))
+                    }
+                />
             </div>
         </div>
     </DashboardLayout>
