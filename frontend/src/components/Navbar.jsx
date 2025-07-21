@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { LayoutTemplate } from 'lucide-react';
+import { ProfileInfoCard } from './Cards';
 
 const Navbar = () => {
   return (
@@ -17,6 +18,7 @@ const Navbar = () => {
             </span>
           </div>
         </Link>
+        <ProfileInfoCard />
       </div>
     </div>
   );
