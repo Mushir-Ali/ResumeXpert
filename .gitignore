@@ -19,3 +19,4 @@ logs/
 
 # VSCode settings (optional)
 .vscode/
+.env
