@@ -1,8 +1,12 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import DashboardLayout from './DashboardLayout'
-import { containerStyles } from '../assets/dummystyle'
+import { buttonStyles, containerStyles } from '../assets/dummystyle'
 import { TitleInput } from './Inputs'
 import { useNavigate, useParams } from 'react-router-dom'
+import { Palette, Trash2 } from 'lucide-react'
+import { API_PATHS } from '../utils/apiPaths'
+import toast from 'react-hot-toast'
+import axiosInstance from '../utils/axiosInstance'
 
 // resize observer hook
 const useResizeObserver = ()=>{
@@ -184,6 +188,21 @@ const EditResume = () => {
     calculateCompletion();
   }, [resumeData]);
 
+  // delete function to delete my resume
+  const handleDeleteResume = async () => {
+    try {
+      setIsLoading(true)
+      await axiosInstance.delete(API_PATHS.RESUME.DELETE(resumeId))
+      toast.success("Resume deleted successfully")
+      navigate("/dashboard")
+    } catch (error) {
+      console.error("Error deleting resume:", error)
+      toast.error("Failed to delete resume")
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
   return (
     <DashboardLayout>
         <div className={containerStyles.main}>
@@ -195,6 +214,17 @@ const EditResume = () => {
                     }))
                     }
                 />
+                <div className='flex flex-wrap items-center gap-3'>
+                  <button onClick={()=> setOpenThemeSelector(true)} className={buttonStyles.theme}>
+                    <Palette size={16} />
+                    <span className='text-sm'>Theme</span>
+                  </button>
+
+                  <button onClick={handleDeleteResume} className={buttonStyles.delete} disabled={isLoading}>
+                    <Trash2 size={16} />
+                    <span className='text-sm'>Delete</span>
+                  </button>
+                </div>
             </div>
         </div>
     </DashboardLayout>
