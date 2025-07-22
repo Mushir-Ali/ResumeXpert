@@ -3,7 +3,7 @@ import DashboardLayout from './DashboardLayout'
 import { buttonStyles, containerStyles } from '../assets/dummystyle'
 import { TitleInput } from './Inputs'
 import { useNavigate, useParams } from 'react-router-dom'
-import { Palette, Trash2 } from 'lucide-react'
+import { Download, Palette, Trash2 } from 'lucide-react'
 import { API_PATHS } from '../utils/apiPaths'
 import toast from 'react-hot-toast'
 import axiosInstance from '../utils/axiosInstance'
@@ -223,6 +223,11 @@ const EditResume = () => {
                   <button onClick={handleDeleteResume} className={buttonStyles.delete} disabled={isLoading}>
                     <Trash2 size={16} />
                     <span className='text-sm'>Delete</span>
+                  </button>
+
+                  <button onClick={()=> setOpenPreviewModal(true)} className={buttonStyles.download}>
+                    <Download size={16} />
+                    <span className='text-sm'>Preview</span>
                   </button>
                 </div>
             </div>
