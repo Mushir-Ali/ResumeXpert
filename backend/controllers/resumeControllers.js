@@ -117,7 +117,7 @@ export const updateResume = async(req,res)=>{
     try{
         const resume = await Resume.findOne({
             _id:req.params.id,
-            userID:req.user._id
+            userId:req.user._id
         })
         if(!resume){
             return res.status(404).json({message:"Resume not found or not authorized"})
