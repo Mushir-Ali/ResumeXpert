@@ -101,7 +101,7 @@ const LandingPage = () => {
                         </h1>
 
                         <p className={landingPageStyles.description}>
-                            Create job winning resumes with expertly designes templates.
+                            Create job-winning resumes with expertly designed templates.
                             ATS-friendly, recruiter-approved, and tailored to your career goals.
                         </p>
 
@@ -136,9 +136,10 @@ const LandingPage = () => {
                                 </div>
                             ))}
                         </div>
-
+                    </div>
                         {/* Right side */}
                         {/* Right Content - SVG Illustration */}
+                        <div className={landingPageStyles.heroRight}>
                         <div className={landingPageStyles.heroIllustration}>
                             <div className={landingPageStyles.heroIllustrationBg}></div>
                             <div className={landingPageStyles.heroIllustrationContainer}>
@@ -207,7 +208,6 @@ const LandingPage = () => {
                                 </svg>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </section>
