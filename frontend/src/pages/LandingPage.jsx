@@ -33,7 +33,7 @@ const LandingPage = () => {
                         <LayoutTemplate className={landingPageStyles.logoIconInner} />
                     </div>
                     <span className={landingPageStyles.logoText}>
-                        ElevateU
+                        ElevateU 
                     </span>
                 </div>
                 {/* Mobile menu button */}
