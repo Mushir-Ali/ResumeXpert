@@ -33,7 +33,7 @@ const LandingPage = () => {
                         <LayoutTemplate className={landingPageStyles.logoIconInner} />
                     </div>
                     <span className={landingPageStyles.logoText}>
-                        ResumeXpert
+                        ElevateU
                     </span>
                 </div>
                 {/* Mobile menu button */}
@@ -218,7 +218,7 @@ const LandingPage = () => {
                     <div className={landingPageStyles.featuresHeader}>
                         <h2 className={landingPageStyles.featuresTitle}>
                             Why choose <span className={landingPageStyles.featuresTitleGradient}>
-                                ResumeXpert ?
+                                ElevateU ?
                             </span>
                         </h2>
                         <p className={landingPageStyles.featuresDescription}>
